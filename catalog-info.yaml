@@ -1,0 +1,26 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: tf-molecule-route53-alias-records-aws
+  description: Terraform molecule that creates dual-stack (A + AAAA) Route53 alias records for one or more domain names pointing at a single AWS target.
+  annotations:
+    github.com/project-slug: PlatformStackPulse/tf-molecule-route53-alias-records-aws
+    backstage.io/techdocs-ref: dir:.
+  tags:
+    - terraform
+    - aws
+    - infrastructure
+    - route53
+    - dns
+  links:
+    - url: https://github.com/PlatformStackPulse/tf-molecule-route53-alias-records-aws
+      title: GitHub Repository
+      icon: github
+spec:
+  type: terraform-module
+  lifecycle: production
+  owner: platform-team
+  system: infrastructure
+  dependsOn:
+    - resource: terraform-module:PlatformStackPulse/tf-label
+    - resource: terraform-module:PlatformStackPulse/tf-atom-route53-record-aws
